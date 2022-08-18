@@ -7,7 +7,7 @@ class Solution {
         }
         int start = maxWeight, end = totalWeight, ans = 0;
         while(start <= end){
-            int mid = start + ((end - start) / 2);
+            int mid = start + ((end - start) >> 1);
             if(canShip(weights, mid, days)){
                 ans = mid;
                 end = mid - 1;
