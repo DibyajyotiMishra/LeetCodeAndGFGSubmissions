@@ -1,10 +1,15 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
+        
+        if(weights.length == 0 || weights == null || days == 0)
+            return 0;
+        
         int maxWeight = 0, totalWeight = 0;
         for(int weight: weights){
             maxWeight  = Math.max(weight, maxWeight);
             totalWeight += weight;
         }
+        
         
         if(weights.length == days)
             return maxWeight;
