@@ -23,7 +23,9 @@ class Solution {
                 day++;
                 sumOfWeights = weights[i];
             }
+            if(day > days)
+                return false;
         }
-        return day <= days;
+        return true;
     }
 }
