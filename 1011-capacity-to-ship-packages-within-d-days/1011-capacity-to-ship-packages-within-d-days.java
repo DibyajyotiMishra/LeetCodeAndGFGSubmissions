@@ -1,8 +1,8 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
         
-        if(weights.length == 0 || weights == null || days == 0)
-            return 0;
+        // if(weights.length == 0 || weights == null || days == 0)
+        //     return 0;
         
         int maxWeight = 0, totalWeight = 0;
         for(int weight: weights){
