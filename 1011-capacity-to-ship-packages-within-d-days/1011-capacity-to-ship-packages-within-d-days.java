@@ -5,6 +5,10 @@ class Solution {
             maxWeight  = Math.max(weight, maxWeight);
             totalWeight += weight;
         }
+        
+        if(weights.length == days)
+            return maxWeight;
+        
         int start = maxWeight, end = totalWeight, ans = 0;
         while(start <= end){
             int mid = start + ((end - start) >> 1);
