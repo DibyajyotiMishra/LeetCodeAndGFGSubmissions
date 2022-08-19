@@ -5,6 +5,7 @@ class Solution {
         for(int num: nums)
             totalSum += num;
         
+        // try to maximise the middle elements subarray.
         int maxLength = -1, currSum = 0;
         for (int l=0, r=0; r<nums.length; r++) {
             currSum += nums[r];
