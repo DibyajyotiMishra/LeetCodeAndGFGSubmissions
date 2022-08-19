@@ -1,25 +1,17 @@
 class Solution {
     public int minOperations(int[] nums, int x) {
-        int n = nums.length, sum = 0;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        map.put(0, -1);
-        for(int i = 0; i < nums.length; i++){
-            sum += nums[i];
-            map.put(sum, i);
-        }
-        int trgt = sum - x;
+        // Calculate total Sum of array.
+        int totalSum = 0;
+        for(int num: nums)
+            totalSum += num;
         
-        if(trgt < 0)
-            return -1;
-        
-        sum = 0;
-        int remLength = Integer.MIN_VALUE;
-        for(int i = 0; i < nums.length; i++){
-            sum += nums[i];
-            if(map.containsKey(sum-trgt)){
-                remLength = Math.max(remLength, i - map.get(sum - trgt));
-            }
+        int maxLength = -1, currSum = 0;
+        for (int l=0, r=0; r<nums.length; r++) {
+            currSum += nums[r];
+            while (l <= r && currSum > totalSum - x) currSum -= nums[l++];
+            if (currSum == totalSum - x) maxLength = Math.max(maxLength, r-l+1);
         }
-        return remLength == Integer.MIN_VALUE ? -1 : n - remLength;
+
+	    return maxLength == -1 ? -1 : nums.length - maxLength;
     }
 }
