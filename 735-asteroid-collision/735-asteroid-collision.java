@@ -3,7 +3,9 @@ class Solution {
     public int[] asteroidCollision(int[] asteroids) {
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < asteroids.length; i++) {
-            if (st.isEmpty() || asteroids[i] > 0) st.push(asteroids[i]); else {
+            if (st.isEmpty() || asteroids[i] > 0) {
+                st.push(asteroids[i]);
+            } else {
                 while (true) {
                     int top = st.peek();
                     if (top < 0) {
@@ -25,6 +27,7 @@ class Solution {
             }
         }
         int ans[] = new int[st.size()];
+
         for (int i = st.size() - 1; i >= 0; i--) {
             ans[i] = st.pop();
         }
