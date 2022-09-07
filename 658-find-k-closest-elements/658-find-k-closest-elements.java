@@ -28,8 +28,7 @@ class Solution {
         }
 
         while(pq.size() != 0){
-            Pair p = pq.poll();
-            ans.add(p.el);
+            ans.add(pq.poll().el);
         }
         
         Collections.sort(ans);
