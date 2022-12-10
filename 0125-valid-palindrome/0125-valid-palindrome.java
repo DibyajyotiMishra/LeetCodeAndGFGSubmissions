@@ -2,9 +2,9 @@ class Solution {
     public boolean isPalindrome(String s) {
         // String Modifications
         
-        s = s.replace(" ", "");
-        s = s.replaceAll("[^a-zA-Z0-9]", "");
-        s = s.toLowerCase();
+        s = s.replace(" ", ""); // removing spaces
+        s = s.replaceAll("[^a-zA-Z0-9]", ""); // removing non-alphanumeric characters
+        s = s.toLowerCase(); // converting into lowercase
         
         // finding the reverse of the string
         int len = s.length();
