@@ -46,14 +46,25 @@ class Solution
   public void insertionSort(int arr[], int n)
   {
       //code here
-      for(int i = 1; i < n; i++){
-          int current = arr[i];
-          int j = i - 1;
-          while(j >= 0 && arr[j] > current){
-              arr[j+1] = arr[j];
-              j--;
-          }
-          arr[j+1] = current;
-      }
+    //   for(int i = 1; i < n; i++){
+    //       int current = arr[i];
+    //       int j = i - 1;
+    //       while(j >= 0 && arr[j] > current){
+    //           arr[j+1] = arr[j];
+    //           j--;
+    //       }
+    //       arr[j+1] = current;
+    //   }
+    if(n <= 1)
+        return;
+        
+    insertionSort(arr, n-1);
+    
+    int last = arr[n-1], j = n - 2;
+    
+    while(j >= 0 && arr[j] > last){
+        arr[j+1] = arr[j--];
+    }
+    arr[j+1] = last;
   }
 }
