@@ -41,9 +41,14 @@ class Solution{
     {
         
         // Your code here
-        for(int num: arr){
-            if(num == K)
+        int st = 0, en = N-1;
+        while(st <= en) {
+            int m = st + ((en-st) >> 1);
+            if(arr[m] == K)
                 return 1;
+            else if(arr[m] > K)
+                en = m-1;
+            else st = m+1;
         }
         return -1;
     }
