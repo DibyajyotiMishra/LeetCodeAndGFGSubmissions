@@ -38,17 +38,17 @@ public class Main {
 //User function Template for Java
 
 class Solution {
-    void leftRotate(int[] arr, int n, int d) {
+    void leftRotate(int[] arr, int n, int k) {
         // code here
-        reverse(arr, 0, d-1);
-        reverse(arr, d, n-1);
+        reverse(arr, 0, k-1);
+        reverse(arr, k, n-1);
         reverse(arr, 0, n-1);
     }
-    void reverse(int arr[], int start, int end) {
-        while(start <= end) {
-            int temp = arr[start];
-            arr[start++] = arr[end];
-            arr[end--] = temp;
+    private void reverse(int arr[], int st, int en) {
+        while(st <= en) {
+            int temp = arr[st];
+            arr[st++] = arr[en];
+            arr[en--] = temp;
         }
     }
 }
