@@ -40,26 +40,10 @@ class Compute {
     public static int missingNumber(int A[], int N)
     {
          // Your code goes here
-         int temp[] = new int[N+1];
-         Arrays.fill(temp, 0);
-         
-         for(int i = 0; i < A.length; i++){
-             temp[A[i]]++;
-         }
-         
-         int missingNum = 0;
-         for(int i = 1; i < temp.length; i++){
-             if(temp[i] == 0) {
-                missingNum = i;
-                break;
-             }
-         }
-         
-        // //  for(int i = 1; i < temp.length; i++)
-        // //     System.out.print(temp[i] + " ");
-            
-        // System.out.println();
-         
-         return missingNum;
+         int totalSum = (N * (N+1)) >> 1;
+         int arraySum = 0;
+         for(int num: A)
+            arraySum += num;
+         return totalSum - arraySum;
     }
 }
