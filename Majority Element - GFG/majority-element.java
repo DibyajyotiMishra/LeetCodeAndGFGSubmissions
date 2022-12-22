@@ -31,21 +31,18 @@ class Geeks
 
 class Solution
 {
-    static int majorityElement(int a[], int size)
+    static int majorityElement(int nums[], int size)
     {
         // your code here
         HashMap<Integer, Integer> map = new HashMap<>();
-        
-        for(int num: a){
-            map.put(num, map.getOrDefault(num, 0) + 1);
+        for (int i = 0; i< nums.length; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
         }
         
-        int num = -1;
-        for(Map.Entry<Integer, Integer> e : map.entrySet()) {
-            if(e.getValue() > (size/2))
-                num = e.getKey();
+        for(Map.Entry el: map.entrySet()){
+            int cnt = (Integer)el.getValue();
+            if(cnt > nums.length/2) return (Integer)el.getKey();
         }
-        
-        return num;
+        return -1;
     }
 }
