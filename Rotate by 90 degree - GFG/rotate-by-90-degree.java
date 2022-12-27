@@ -44,8 +44,11 @@ class Solution
     //Function to rotate matrix anticlockwise by 90 degrees.
     static void rotateby90(int matrix[][], int n) 
     { 
-        // step 1: find transpose of the given matrix
+        // i -> row iterator
+        // j -> column iterator
         
+        
+        // step 1: find transpose of the given matrix
         for(int i = 0; i < n; i++) {
             for(int j = i+1; j < n; j++) {
                 int temp = matrix[i][j];
@@ -54,16 +57,15 @@ class Solution
             }
         }
         
-        // step 2: Now swap the rows of the matrix top ---> down
-        int ind = n-1;
-        for (int i=0;i<n;i++){
-            for (int j=0;j<n/2;j++){
-                int temp = matrix[j][i];
-                matrix[j][i] = matrix[ind][i];
-                matrix[ind][i] = temp;
-                ind--;
+        // step 2: Now swap the columns of the matrix top ---> down
+        int k = n - 1;
+        for(int j = 0; j < n; j++) {
+            for(int i = 0; i < n/2; i++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[k][j];
+                matrix[k--][j] = temp;
             }
-            ind = n-1;
+            k = n - 1;
         }
     }
 }
