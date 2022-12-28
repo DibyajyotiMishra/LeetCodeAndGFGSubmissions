@@ -58,20 +58,45 @@ class GFG {
 class Solution {
     public static ArrayList<Integer> Solve(int n, int[] nums) {
         // code here
-        HashMap<Integer,Integer> numFreq = new HashMap<>();
-        for(int num : nums) 
-            numFreq.put(num, numFreq.getOrDefault(num, 0) + 1);
-            
-            
-        ArrayList<Integer> majorityNums = new ArrayList<>();
-        for(Map.Entry<Integer, Integer> entry: numFreq.entrySet()) {
-            if(entry.getValue() > (n/3))
-                majorityNums.add(entry.getKey());
+        int el1 = -1, el2 = -1, cnt1 = 0, cnt2 = 0;
+        for(int i = 0; i < n; i++) {
+            if(el1 == nums[i])
+                cnt1++;
+            else if(el2 == nums[i])
+                cnt2++;
+            else if(cnt1 == 0) {
+                el1 = nums[i];
+                cnt1++;
+            }
+            else if(cnt2 == 0) {
+                el2 = nums[i];
+                cnt2++;
+            }
+            else {
+                cnt1--;
+                cnt2--;
+            }
         }
         
-        if(majorityNums.size() < 1) majorityNums.add(-1);
+        cnt1 = cnt2 = 0;
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i = 0; i < n; i++) {
+            if(nums[i] == el1)
+                cnt1++;
+            if(nums[i] == el2)
+                cnt2++;
+        }
         
-        return majorityNums;
+        if(cnt1 > n/3)
+            ans.add(el1);
+        if(cnt2 > n/3)
+            ans.add(el2);
+            
+            
+        if(ans.size() < 1)
+            ans.add(-1);
+            
+        return ans;
     }
 }
         
