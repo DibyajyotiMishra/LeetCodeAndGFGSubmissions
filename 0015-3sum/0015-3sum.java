@@ -1,15 +1,15 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
         int n = nums.length, i = 0;
+        Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         while(i < n-2) {
             if(i == 0 || (i > 0 && nums[i] != nums[i-1])) {
-               int j = i+1, k = n - 1;
-                int sum = - nums[i];
+                int j = i+1, k = n-1;
+                int trgt = - nums[i];
                 while(j < k) {
                     int curSum = nums[j] + nums[k];
-                    if(curSum == sum) {
+                    if(curSum == trgt) {
                         List<Integer> list = new ArrayList<>();
                         list.add(nums[i]);
                         list.add(nums[j]);
@@ -19,7 +19,8 @@ class Solution {
                         while(j < k && nums[k] == nums[k-1]) k--;
                         j++; k--;
                     }
-                    else if(curSum > sum) k--;
+                    else if(trgt < curSum) 
+                        k--;
                     else j++;
                 }
             }
