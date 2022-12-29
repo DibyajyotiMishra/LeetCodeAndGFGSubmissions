@@ -1,22 +1,20 @@
 class Solution {
-    public int threeSumClosest(int[] A, int x) {
-        Arrays.sort(A);
-        int ans = 0, minDistance = Integer.MAX_VALUE, n = A.length;
-        for(int i = 0; i < n-2; i++) {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int n = nums.length, i = 0;
+        int minDistance = Integer.MAX_VALUE, ans = -1;
+        for(; i < n-2; i++) {
             int j = i+1, k = n-1;
             while(j < k) {
-                int sum = A[i] + A[j] + A[k];
-                if(Math.abs(x - sum) < minDistance) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if(Math.abs(target-sum) < minDistance) {
+                    minDistance = Math.abs(target-sum);
                     ans = sum;
-                    minDistance = Math.abs(x - sum);
-                    while(j < k && A[j] == A[j+1])
-                        j++;
-                    while(j < k && A[k] == A[k-1])
-                        k--;
-                }
-                if(x - sum == 0)
+                    // j++; k--;
+                } 
+                if(target-sum == 0)
                     return sum;
-                else if(x < sum)
+                else if(target < sum)
                     k--;
                 else j++;
             }
