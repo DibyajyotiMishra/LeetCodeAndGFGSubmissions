@@ -35,17 +35,16 @@ public class Main {
 class Solution {
     int print2largest(int arr[], int n) {
         // code here
-        int biggest = -1, bigger = -1;
-        for(int i = 0; i < n; i++){
-            if(arr[i] > biggest){
+        int bigger = -1, biggest = -1;
+        for(int num: arr) {
+            if(num > biggest) {
                 bigger = biggest;
-                biggest = arr[i];
+                biggest = num;
             }
-            if(arr[i] > bigger && arr[i] < biggest)
-                bigger = arr[i];
+            if(num > bigger && num < biggest) {
+                bigger = num;
+            }
         }
-            
-        
         return bigger;
     }
 }
