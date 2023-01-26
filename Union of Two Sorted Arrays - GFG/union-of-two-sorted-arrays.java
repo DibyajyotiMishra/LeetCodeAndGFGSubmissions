@@ -74,13 +74,13 @@ class Solution
                 j++;
             }
         }
-        while(i < n) { // remaining elememts 
+        while(i < n) { // leftovers in arr1 
            if(union.size() == 0 || (union.get(union.size()-1) != arr1[i]))
                     union.add(arr1[i]);
                 i++; 
         }
         
-        while(j < m) {
+        while(j < m) { // leftovers in arr2
             if(union.size() == 0 || (union.get(union.size()-1) != arr2[j]))
                     union.add(arr2[j]);
                 j++;
