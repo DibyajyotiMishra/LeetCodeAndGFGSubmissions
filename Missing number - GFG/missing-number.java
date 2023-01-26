@@ -41,9 +41,9 @@ class Compute {
     {
          // Your code goes here
          int totalSum = (N * (N+1)) >> 1;
-         int arraySum = 0;
+         int currSum = 0;
          for(int num: A)
-            arraySum += num;
-         return totalSum - arraySum;
+            currSum += num;
+        return totalSum - currSum;
     }
 }
