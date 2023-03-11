@@ -1,0 +1,21 @@
+.forms{
+    background-image: url("../../../public/assets/mesh-241.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: -3;
+  }
+  .cardRegister{
+    /* margin: auto; */
+    margin-top: 20px;
+    background-color: #ffffff;
+    width:650px;
+    /* float: center; */
+    /* text-align: center; */
+    border-radius: 10px;
+    /* display: flex;
+    justify-content: center; */
+  }

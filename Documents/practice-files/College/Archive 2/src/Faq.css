@@ -1,0 +1,117 @@
+.accordion-wrapper {
+  margin: 0;
+}
+
+.accordion {
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin: 10px 0 0;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+}
+
+.main-acc {
+  border: 3px solid black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 6px 6px 6px 6px;
+  padding: 28px;
+}
+
+.main-acc.two {
+  /* background: #40ff00; */
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+.main-acc.three {
+  /* background: #00ffee; */
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+.main-acc.four {
+  /* background: #ff00ff; */
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+.main-acc.five {
+  /* background: #ff7300; */
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.main-acc.six {
+  /* background: #a0acea; */
+  background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  );
+}
+
+.main-acc.active {
+  border-top: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-left: 3px solid #000000;
+  border-bottom: none;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.main-acc:hover {
+  background-color: #ccc;
+}
+
+.sub-acc {
+  background-color: white;
+  text-decoration: underline;
+  margin: 0;
+  padding: 18px 28px;
+}
+
+.accordion:after {
+  content: "\002B";
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  font-size: 28px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  border: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.sub-panel {
+  border: none;
+  /*   margin: 20px; */
+}
+
+.sub-panel p {
+  padding: 0 18px;
+  margin: 10px 20px;
+  font-family: sans-serif;
+}
+
+.accordion.active + .main-panel {
+  /*  background: red; */
+  border: 3px solid #000000;
+  border-radius: 0px 0px 6px 6px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}

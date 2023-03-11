@@ -1,0 +1,17 @@
+
+                
+                <p className="text-white text-[16px] py-2 w-50">
+                  {eventDetails.description}
+                </p>
+                <h1 className="text-[30px] font-space text-white p-2  ">
+                  Rules
+                </h1>
+                <p className="w-50">{eventDetails.rules}</p>
+                
+              </div>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>

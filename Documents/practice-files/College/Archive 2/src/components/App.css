@@ -1,0 +1,70 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.title {
+  font-size: 5em;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+h3 {
+  padding-top: 0.25em;
+}
+
+.vertical-timeline-element-content-box {
+  padding: 1em;
+  height: max-content;
+  border-radius: 0.5em;
+  /* background: linear-gradient(to right,#0c4401,#348a0c,#8f960e); */
+  /* background-color: #05b164; */
+  background-color: rgba(61, 232, 121, 0.662);
+}
+
+.vertical-timeline-element-content {
+  box-shadow: 0 0.25em 0.5em 0 transparent,
+    0 0.4em 1.25em 0 transparent !important;
+  padding: 0em 3em 0em 2em !important;
+}
+
+.date {
+  color: rgb(255, 174, 0);
+}
+
+#description {
+  margin: 1.5em 0 2em 0;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.eventButton {
+  background-color: #000000;
+}
+
+.eventButton:hover {
+  background-color: #ffffff;
+}
+
+.workshopButton {
+  background-color: #000000;
+}
+
+.workshopButton:hover {
+  background-color: #f2ff00;
+}
+
+@media only screen and (max-width: 1700px) {
+  .vertical-timeline-element-date {
+    display: block !important;
+    float: none !important;
+    color: rgb(26, 247, 158);
+    margin-top: 1.5em;
+  }
+}
