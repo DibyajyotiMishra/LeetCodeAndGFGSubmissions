@@ -4,7 +4,7 @@
 <br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input: </strong>n = 55555
+<pre><span style="font-size:18px"><strong>Input: </strong>n = 555
 <strong>Output: </strong>Yes</span>
 </pre>
 
