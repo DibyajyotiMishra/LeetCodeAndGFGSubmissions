@@ -29,12 +29,12 @@ class Solution {
         long ans = 0;
         for(int i = 0; i < 32; i++) {
             long curBit = X % 2;
-            bitsArr[i] = curBit;
+            bitsArr[i] = curBit; // store the bits in reverse order.
             X /= 2;
         }
         int power = 31;
         for(int i = 0; i < 32; i++) {
-            ans += bitsArr[i] * (long)(Math.pow(2, power));
+            ans += bitsArr[i] * (long)(Math.pow(2, power)); // convert the binary to decimal
             power--;
         }
         return ans;
