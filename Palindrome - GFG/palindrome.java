@@ -32,11 +32,12 @@ class Solution
     {
         // Code here
         int revNum = 0;
-        int num  = n;
-        while(num > 0){
-             revNum = revNum * 10 + num%10;
-            num /= 10;
+        int num = n;
+        while(n > 0) {
+            revNum = revNum * 10 + (n % 10);
+            n /= 10;
         }
-        return revNum == n ? "Yes" : "No";
+        
+        return revNum == num ? "Yes" : "No";
     }
 }
